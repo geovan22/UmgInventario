@@ -5,8 +5,8 @@
       <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
         <div class="card card-signin my-5">
           <div class="card-body">
-            <h5 class="card-title text-center">Sign In</h5>
-            <form class="form-signin">
+            <h5 class="card-title text-center">{$mensaje}</h5>
+            <form method="post" action="?controller=Home&action=Login" class="form-signin">
               <div class="form-label-group">
                 <label for="inputName">User</label>
                 <input type="text" name="user" id="inputName" class="form-control" placeholder="Name User" required autofocus>

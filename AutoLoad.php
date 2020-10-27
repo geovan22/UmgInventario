@@ -11,6 +11,9 @@
 
         else if(is_file('Framework/Smarty/'.$class.'.class.php'))
             require_once('Framework/Smarty/'.$class.'.class.php');
+            
+        else if(is_file('Library/'.$class.'.Lib.php'))
+            require_once('Library/'.$class.'.Lib.php');
     }
 
     spl_autoload_register('Autoload');

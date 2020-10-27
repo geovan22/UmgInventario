@@ -3,14 +3,14 @@
 	{
 		function __construct()
 		{
-			$server="";
+			$server="localhost";
 			$pass="";
-			$user="";
-			$base="";
+			$user="root";
+			$base="umginventario";
 			parent::__construct($server,$user,$pass,$base);
 			$this->query("SET NAMES 'utf8';");
 			$this->connect_errno ? die('Error en la conexion') : $error='<br/>Conectado<br/>';
-            echo $error;
+            //echo $error;
 			unset ($error);
 		}
 	}
