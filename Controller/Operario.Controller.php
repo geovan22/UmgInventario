@@ -28,6 +28,15 @@
                 
                 $this->smarty->assign('inventario',$productos);
             }
+            else if($_GET['vista']=='InputOutput')
+            {
+                $vista=$_GET['vista'];
+                $producto=$this->libreria->PrerarConsulta($this->inventario->BuscarProducto($_GET['id']));
+                $this->smarty->assign('codigo',$producto[0]['Codigo']);
+                $this->smarty->assign('nombre',$producto[0]['Nombre']); 
+                $this->smarty->assign('id',$producto[0]['id']);
+                $this->smarty->assign('tipo',$_GET['tipo']);  
+            }
             else
             {
                 $vista='default';
@@ -57,7 +66,7 @@
         
         public function EntradaSalida() 
         {
-             $producto=$this->libreria->PrerarConsulta($this->inventario->BuscarProducto($_GET['id']));
+           var_dump($_POST);  
              
         }
     }
