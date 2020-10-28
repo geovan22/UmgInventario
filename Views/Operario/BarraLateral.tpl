@@ -21,24 +21,19 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Reportes</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li>
-                                <a href="#">Ver Inventario</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#otrosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Otros</a>
+                        <a href="#otrosSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Ver Archivos DB</a>
                         <ul class="collapse list-unstyled" id="otrosSubmenu">
                             <li>
-                                <a href="#">Ver Diagrama ER</a>
+                                <a href="?controller=VerDocumentos&action=VerER">Ver Diagrama ER</a>
                             </li>
                             <li>
-                                <a href="#">Ver Script SQL</a>
+                                <a href="?controller=VerDocumentos&action=VerScriptSql">Ver Script SQL</a>
                             </li>
                             <li>
-                                <a href="#">Ver Info Estudiante</a>
+                                <a href="?controller=VerDocumentos&action=VerScriptSqlApp">Ver Script SQL en Aplicacion</a>
+                            </li>
+                            <li>
+                                <a href="?controller=VerDocumentos&action=VerInfoEstudiante">Ver Info Estudiante</a>
                             </li>
                         </ul>
                     </li>

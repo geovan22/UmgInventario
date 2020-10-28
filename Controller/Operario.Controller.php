@@ -69,10 +69,13 @@
         public function EntradaSalida() 
         {
            $tipoMov=$this->libreria->PrerarConsulta($this->movimiento->BuscarMovimiento($_POST['tipo'])); 
-           var_dump($tipoMov);
-           $res=$this->movimiento->GuardarMovimiento($_POST['idproducto'],$_SESSION['id'],$tipoMov[0]['id'],$tipoMov[0]['Descripcion'],$_POST['cantidad']);  
+           $res=$this->movimiento->GuardarMovimiento($_POST['idproducto'],$_SESSION['id'],$tipoMov[0]['id'],$tipoMov[0]['Descripcion'],$_POST['cantidad']);
            
-           var_dump($res);
+           $mensaje=$this->libreria->Mensajes("transparent",$_SESSION['usuario']);
+            $this->smarty->assign('vista','Default');
+            $this->smarty->assign('mensaje',$mensaje);
+            $this->smarty->assign('title',"Operario");
+            $this->smarty->display('Master.tpl');  
         }
     }
 ?>

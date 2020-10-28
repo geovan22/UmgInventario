@@ -36,10 +36,8 @@
                 );
             ";
             $resultado=$conexion->query($query);
-            echo $query."<br /><br />";
-            var_dump($resultado);
             $conexion->close();
-            
+            return $resultado;
         }
     }
 ?>
