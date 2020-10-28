@@ -4,12 +4,14 @@
         private $smarty;
         Private $libreria;
         Private $inventario;
+        private $movimiento;
         
         public function __construct() 
         {
             $this->smarty = new Smarty();
             $this->libreria=new Library();
             $this->inventario=new Inventario();
+            $this->movimiento=new Movimiento();
             //session_start();
         }
         
@@ -66,8 +68,11 @@
         
         public function EntradaSalida() 
         {
-           var_dump($_POST);  
-             
+           $tipoMov=$this->libreria->PrerarConsulta($this->movimiento->BuscarMovimiento($_POST['tipo'])); 
+           var_dump($tipoMov);
+           $res=$this->movimiento->GuardarMovimiento($_POST['idproducto'],$_SESSION['id'],$tipoMov[0]['id'],$tipoMov[0]['Descripcion'],$_POST['cantidad']);  
+           
+           var_dump($res);
         }
     }
 ?>

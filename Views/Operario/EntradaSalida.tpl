@@ -25,8 +25,8 @@
                           <td>{$i['Cantidad']}</td>
                           <td>{$i['Precio']}</td>
                           <td>
-                            <a href="?controller=Operario&action=Vistas&vista=InputOutput&id={$i['id']}&tipo=entrada" class="stretched-link text-danger" style="position: relative;">Entrada</a>
-                            <a href="?controller=Operario&action=Vistas&vista=InputOutput&id={$i['id']}&tipo=salida" class="stretched-link text-danger" style="position: relative;">Salida</a>
+                            <a href="?controller=Operario&action=Vistas&vista=InputOutput&id={$i['id']}&tipo=Entrada" class="stretched-link text-danger" style="position: relative;">Entrada</a>
+                            <a href="?controller=Operario&action=Vistas&vista=InputOutput&id={$i['id']}&tipo=Salida" class="stretched-link text-danger" style="position: relative;">Salida</a>
                           </td>
                         </tr>
                     {/foreach}

@@ -3,7 +3,7 @@
 	{
 		function __construct()
 		{
-			$server="localhost";
+			$server="localhost:3306";
 			$pass="";
 			$user="root";
 			$base="umginventario";
@@ -14,10 +14,5 @@
 			unset ($error);
 		}
         
-        public function Vitacora($user,$transaccion,$descripcion,$otro)
-        {
-            $fecha=date("Y-m-d");
-            $query="INSERT INTO Vitacora(Usuario_id, Transaccion, Descripcion, Otro, Fecha) VALUES('$user','$transaccion',$descripcion,'$otro','$fecha');"; 
-        }
 	}
 ?>
