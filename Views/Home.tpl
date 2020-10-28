@@ -1,4 +1,4 @@
-{include file="Cabeceras/Header.tpl"}
+
 <br /><br /><br />
 <div class="container " >
     <div class="row ">
@@ -32,4 +32,3 @@
   </div>
 		
 
-{include file="Cabeceras/Footer.tpl"}

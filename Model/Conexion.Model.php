@@ -13,5 +13,11 @@
             //echo $error;
 			unset ($error);
 		}
+        
+        public function Vitacora($user,$transaccion,$descripcion,$otro)
+        {
+            $fecha=date("Y-m-d");
+            $query="INSERT INTO Vitacora(Usuario_id, Transaccion, Descripcion, Otro, Fecha) VALUES('$user','$transaccion',$descripcion,'$otro','$fecha');"; 
+        }
 	}
 ?>

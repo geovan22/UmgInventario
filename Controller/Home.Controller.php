@@ -12,10 +12,10 @@
         
         public function Inicio() 
         {
-            $mensaje=$this->libreria->Mensajes("transparent","Sign In");
+            $mensaje=$this->libreria->Mensajes("secondary","Sign In");
             $this->smarty->assign('mensaje',$mensaje);
-            $this->smarty->assign('title',"home");
-            $this->smarty->display('index.tpl');
+            $this->smarty->assign('title',"Home");
+            $this->smarty->display('Master.tpl');
         }
         
         public function Login()
@@ -34,6 +34,12 @@
                         $_SESSION['usuario']=$us[0]['User'];
                         $_SESSION['id']=$us[0]['id'];
                         
+                        $mensaje=$this->libreria->Mensajes("transparent",$_SESSION['usuario']);
+                        $this->smarty->assign('vista',$vista);
+                        $this->smarty->assign('mensaje',$mensaje);
+                        $this->smarty->assign('title',"Operario");
+                        $this->smarty->display('Master.tpl');
+                        
                     }
                     else
                     {
@@ -41,8 +47,8 @@
                         ("warning","Usuario Dado de Baja").
                         $this->libreria->Mensajes("secondary","Comuniquese con el administrador");
                         $this->smarty->assign('mensaje',$mensaje);
-                        $this->smarty->assign('title',"home");
-                        $this->smarty->display('index.tpl');
+                        $this->smarty->assign('title',"Home");
+                        $this->smarty->display('Master.tpl');
                     }
                 }
                 else if($usuario->num_rows>1)
@@ -52,15 +58,15 @@
                         $this->libreria->Mensajes("secondary","Comuniquese con el administrador");
                         
                         $this->smarty->assign('mensaje',$mensaje);
-                        $this->smarty->assign('title',"home");
-                        $this->smarty->display('index.tpl');
+                        $this->smarty->assign('title',"Home");
+                        $this->smarty->display('Master.tpl');
                 }
                 else
                 {
                     $mensaje=$this->libreria->Mensajes("danger","Datos Erroneos<br />Intente nueva mente");
                     $this->smarty->assign('mensaje',$mensaje);
-                    $this->smarty->assign('title',"home");
-                    $this->smarty->display('index.tpl');
+                    $this->smarty->assign('title',"Home");
+                    $this->smarty->display('Master.tpl');
                 }
             }
             else
