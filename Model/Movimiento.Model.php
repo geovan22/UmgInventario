@@ -45,11 +45,11 @@
             $conexion=New Conexion();
             if($tipo==1)
             {
-                $query="UPDATE `inventario` SET `Cantidad`=`Cantidad`+'$cantidad' WHERE `id`='$id';";
+                $query="UPDATE `Inventario` SET `Cantidad`=`Cantidad`+'$cantidad' WHERE `id`='$id';";
             }
             else
             {
-                $query="UPDATE `inventario` SET `Cantidad`=`Cantidad`-'$cantidad' WHERE `id`='$id';";   
+                $query="UPDATE `Inventario` SET `Cantidad`=`Cantidad`-'$cantidad' WHERE `id`='$id';";   
             }
             $resultado=$conexion->query($query);
             $conexion->close();
