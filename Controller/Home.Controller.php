@@ -37,7 +37,7 @@
                         $mensaje=$this->libreria->Mensajes("transparent",$_SESSION['usuario']);
                         $this->smarty->assign('vista',$vista);
                         $this->smarty->assign('mensaje',$mensaje);
-                        $this->smarty->assign('title',"Operario");
+                        $this->smarty->assign('title',$vista);
                         $this->smarty->display('Master.tpl');
                         
                     }
