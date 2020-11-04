@@ -37,7 +37,7 @@
             <div class="col-10">
                 <br /><br />
                 <div class="table-responsive">
-                    <table class="table table-hover table-dark">
+                    <table class="table table-hover table-dark table-responsive">
                       <thead>
                         <tr>
                           <th scope="col">Usuario</th>
