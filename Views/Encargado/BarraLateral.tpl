@@ -9,7 +9,7 @@
         
                 <ul class="list-unstyled components">
                     <p>Base de datos 1</p>
-                    <li class="active">
+                    <li >
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Consultas</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
                             <li>
@@ -17,6 +17,17 @@
                             </li>
                             <li>
                                 <a href="?controller=Encargado&action=Vistas&vista=Movimiento">Busqueda por Movimientos</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#CrearUsuario" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Operaciones</a>
+                        <ul class="collapse list-unstyled" id="CrearUsuario">
+                            <li>
+                                <a href="?controller=Encargado&action=Vistas&vista=CrearUsuario">Crear Usuario</a>
+                            </li>
+                            <li>
+                                <a href="?controller=Encargado&action=Vistas&=ListarUsuario">Listar Usuario</a>
                             </li>
                         </ul>
                     </li>

@@ -6,10 +6,12 @@
         {include file='Encargado/Inventario.tpl'}
       {else if $vista=='Movimiento'}
         {include file='Encargado/Movimientos.tpl'}
+      {else if $vista=='CrearUsuario'}
+        {include file='Encargado/CrearUsuario.tpl'}
       
       {else}
         <br /><br />  
-        <img src="Recursos/LogoUmg.png" class="rounded mx-auto d-block" alt="Responsive image">
+        <img src="Recursos/LogoUmg.png" class="rounded mx-auto d-block" alt="Responsive image"/>
       {/if}
     </div>
  </div>

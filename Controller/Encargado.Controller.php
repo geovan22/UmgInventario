@@ -5,6 +5,7 @@
         Private $libreria;
         Private $inventario;
         private $movimiento;
+        private $usuario;
         
         public function __construct() 
         {
@@ -12,6 +13,7 @@
             $this->libreria=new Library();
             $this->inventario=new Inventario();
             $this->movimiento=new Movimiento();
+            $this->usuario=new Usuario();
             //session_start();
         }
 
@@ -32,6 +34,13 @@
                 $mov=$this->libreria->PrerarConsulta($this->movimiento->VerTipoMovimientos());
                 $this->smarty->assign('tipo',$mov);
             }
+            else if($vista=='CrearUsuario')
+            {
+                $vista=$_GET['vista'];
+                $puesto=$this->libreria->PrerarConsulta($this->usuario->VerPuestos());
+                $this->smarty->assign('puesto',$puesto);
+            }
+            
             else
             {
                 
@@ -58,7 +67,18 @@
             $this->smarty->assign('mensaje',$mensaje);
             $this->smarty->assign('title',"Encargado");
             $this->smarty->display('Master.tpl');
+        }
+        
+        public function CrearUsuario() 
+        {
            
+           $this->usuario->CrearUsuario($_POST['puesto'],$_POST['nombre'],$_POST['apellido'],$_POST['fecha'],$_POST['pass'],$_POST['usuario']);
+            
+            $mensaje=$this->libreria->Mensajes("transparent",$_SESSION['usuario']);
+            $this->smarty->assign('vista','Default');
+            $this->smarty->assign('mensaje',$mensaje);
+            $this->smarty->assign('title',"Encargado");
+            $this->smarty->display('Master.tpl');
         }
     }
 ?>

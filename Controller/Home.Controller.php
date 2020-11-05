@@ -8,6 +8,7 @@
         {
             $this->smarty = new Smarty();
             $this->libreria=new Library();
+            $this->usuario =new Usuario();
         }
         
         public function Inicio() 
@@ -19,15 +20,14 @@
         }
         
         public function Login()
-        {   $this->usuario =new Usuario();
-            $usuario=$this->usuario->BuscarUsuario($_POST['user'],$_POST['password']);
-            //var_dump($usuario);
-            if($usuario!=false)
+        {   //$this->usuario =new Usuario();
+            $user=$this->usuario->BuscarUsuario($_POST['user'],$_POST['password']);
+            if($user!=false)
             {
-                if($usuario->num_rows==1)
+                if($user->num_rows==1)
                 {
                     session_start();
-                    $us=$this->libreria->PrerarConsulta($usuario);
+                    $us=$this->libreria->PrerarConsulta($user);
                     if($us[0]['Estado'])
                     {
                         $vista=$us[0]['Puesto'];
@@ -51,7 +51,7 @@
                         $this->smarty->display('Master.tpl');
                     }
                 }
-                else if($usuario->num_rows>1)
+                else if($user->num_rows>1)
                 {
                     $mensaje=$this->libreria->Mensajes
                         ("warning","Usuario Duplicado").
