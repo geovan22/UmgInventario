@@ -31,7 +31,7 @@
         {
             $query="SELECT  *
                     FROM 
-                    puesto
+                    Puesto
             ";
             $resultado=$this->conexion->query($query);
             $this->conexion->close();
