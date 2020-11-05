@@ -18,9 +18,26 @@
                             U.Estado 
                     FROM Usuario U, 
                          Puesto P 
-                    WHERE   U.id=P.id 
+                    WHERE   U.Puesto_id=P.id 
                     AND U.User_2='$user' 
                     AND U.Pass='$pass';
+            ";
+            $resultado=$this->conexion->query($query);
+            $this->conexion->close();
+            return ($resultado);      
+        }
+        
+        public function VerUsuario()
+        {
+            $query="SELECT  U.id,
+                            U.Nombre, 
+                            U.Apellido, 
+                            U.User_2 as User, 
+                            P.Puesto, 
+                            U.Estado 
+                    FROM Usuario U, 
+                         Puesto P 
+                    WHERE   U.Puesto_id=P.id 
             ";
             $resultado=$this->conexion->query($query);
             $this->conexion->close();
@@ -59,6 +76,18 @@
             $resultado=$this->conexion->query($query);
             $this->conexion->close();
             return ($resultado); 
+        }
+        
+        public function ActivarUsuario($id, $estado) 
+        {
+            $query="
+                UPDATE Usuario 
+                SET Estado='$estado' 
+                WHERE id='$id';
+            ";
+            $resultado=$this->conexion->query($query);
+            $this->conexion->close();
+            return ($resultado);
         }
     }
 ?>

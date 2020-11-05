@@ -27,7 +27,7 @@
                                 <a href="?controller=Encargado&action=Vistas&vista=CrearUsuario">Crear Usuario</a>
                             </li>
                             <li>
-                                <a href="?controller=Encargado&action=Vistas&=ListarUsuario">Listar Usuario</a>
+                                <a href="?controller=Encargado&action=Vistas&vista=ListarUsuario">Listar Usuario</a>
                             </li>
                         </ul>
                     </li>

@@ -8,6 +8,8 @@
         {include file='Encargado/Movimientos.tpl'}
       {else if $vista=='CrearUsuario'}
         {include file='Encargado/CrearUsuario.tpl'}
+      {else if $vista=='ListarUsuario'}
+        {include file='Encargado/ListarUsuario.tpl'}
       
       {else}
         <br /><br />  

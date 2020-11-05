@@ -39,6 +39,14 @@
                 $vista=$_GET['vista'];
                 $puesto=$this->libreria->PrerarConsulta($this->usuario->VerPuestos());
                 $this->smarty->assign('puesto',$puesto);
+            } 
+            
+            else if($vista=='ListarUsuario')
+            {
+                $vista=$_GET['vista'];
+                $user=$this->libreria->PrerarConsulta($this->usuario->VerUsuario());
+                
+                $this->smarty->assign('usuario',$user);
             }
             
             else
@@ -73,6 +81,21 @@
         {
            
            $this->usuario->CrearUsuario($_POST['puesto'],$_POST['nombre'],$_POST['apellido'],$_POST['fecha'],$_POST['pass'],$_POST['usuario']);
+            
+            $mensaje=$this->libreria->Mensajes("transparent",$_SESSION['usuario']);
+            $this->smarty->assign('vista','Default');
+            $this->smarty->assign('mensaje',$mensaje);
+            $this->smarty->assign('title',"Encargado");
+            $this->smarty->display('Master.tpl');
+        }
+        
+        public function ActivarUser() 
+        {
+            if($_GET['Tipo']=='activo')
+                $tipo=1;
+            else
+                $tipo=0;
+            $this->usuario->ActivarUsuario($_GET['id'],$tipo);
             
             $mensaje=$this->libreria->Mensajes("transparent",$_SESSION['usuario']);
             $this->smarty->assign('vista','Default');
