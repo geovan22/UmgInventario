@@ -10,11 +10,12 @@
         }
         
         public function VerCategoria() 
-        {
+        { 
+            $conex=New Conexion();
             $query="SELECT * 
                     FROM Categoria;";
-            $resultado=$this->con->query($query);
-            $this->con->close();
+            $resultado=$conex->query($query);
+            $conex->close();
             return $resultado;   
         }
         
@@ -47,7 +48,7 @@
                            C.Nombre as Categoria  
                 FROM Inventario I,
                      Categoria C
-                WHERE I.id = C.id
+                WHERE I.Categoria_id = C.id
             ;";
             $resultado=$this->con->query($query);
             $this->con->close();

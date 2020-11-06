@@ -53,7 +53,9 @@
         
         public function GuardarProducto()
         { 
-             $this->inventario->GuardarInventario($_SESSION['id'],$_POST['nombre'],$_POST['descripcion'],$_POST['codigo'],$_POST['categoria'],$_POST['cantidad'],$_POST['precio']);
+             $dato=$this->inventario->GuardarInventario($_SESSION['id'],$_POST['nombre'],$_POST['descripcion'],$_POST['codigo'],$_POST['categoria'],$_POST['cantidad'],$_POST['precio']);
+             
+             //var_dump($dato);die();
              
               $categoria=$this->libreria->PrerarConsulta($this->inventario->VerCategoria()); 
               $vista='Default';
