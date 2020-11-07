@@ -10,6 +10,10 @@
         {include file='Encargado/CrearUsuario.tpl'}
       {else if $vista=='ListarUsuario'}
         {include file='Encargado/ListarUsuario.tpl'}
+      {else if $vista=='CrearCategoria'}
+        {include file='Encargado/CrearCategoria.tpl'}
+      {else if $vista=='VerCategoria'}
+        {include file='Encargado/VerCategoria.tpl'}
       
       {else}
         <br /><br />  

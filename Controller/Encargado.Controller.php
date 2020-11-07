@@ -49,6 +49,19 @@
                 $this->smarty->assign('usuario',$user);
             }
             
+            else if($vista=='CrearCategoria')
+            {
+                $vista=$_GET['vista'];
+                
+            }
+            
+             else if($vista=='VerCategoria')
+            {
+                $vista=$_GET['vista'];
+                $categoria=$this->libreria->PrerarConsulta($this->inventario->VerCategoria());
+                $this->smarty->assign('categoria',$categoria);
+            }
+            
             else
             {
                 
@@ -102,6 +115,28 @@
             $this->smarty->assign('mensaje',$mensaje);
             $this->smarty->assign('title',"Encargado");
             $this->smarty->display('Master.tpl');
+        }
+        
+        public function CrearCategoria() 
+        {
+             $this->inventario->CrearCategoria($_POST['categoria'],$_POST['descripcion']);
+             
+             $mensaje=$this->libreria->Mensajes("transparent",$_SESSION['usuario']);
+             $this->smarty->assign('vista','Default');
+             $this->smarty->assign('mensaje',$mensaje);
+             $this->smarty->assign('title',"Encargado");
+             $this->smarty->display('Master.tpl');
+        }
+        
+        public function EliminarCategoria() 
+        {
+            $this->inventario->EliminarCategoria($_GET['id']);
+            
+             $mensaje=$this->libreria->Mensajes("transparent",$_SESSION['usuario']);
+             $this->smarty->assign('vista','Default');
+             $this->smarty->assign('mensaje',$mensaje);
+             $this->smarty->assign('title',"Encargado");
+             $this->smarty->display('Master.tpl');
         }
     }
 ?>

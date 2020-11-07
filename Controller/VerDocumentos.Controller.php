@@ -11,12 +11,18 @@
         
         public function VerScriptSql()
         { 
-            
+            $mi_pdf = 'Recursos/DBumginventario.pdf';
+            header('Content-type: application/pdf');
+            header('Content-Disposition: attachment; filename="'.$mi_pdf.'"');
+            readfile($mi_pdf);     
         }
         
         public function VerScriptSqlApp()
         { 
-            
+            $mi_pdf = 'Recursos/ScriptAPP.pdf';
+            header('Content-type: application/pdf');
+            header('Content-Disposition: attachment; filename="'.$mi_pdf.'"');
+            readfile($mi_pdf);      
         }
         
         public function VerInfoEstudiante()

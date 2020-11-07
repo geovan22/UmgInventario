@@ -73,5 +73,33 @@
             $this->con->close();
             return $resultado; 
         }
+        
+        public function CrearCategoria($nom, $desc) 
+        { 
+            $conex=New Conexion();
+            $query="INSERT INTO Categoria( 
+                                    Nombre, 
+                                    Descripcion
+                                )
+                    VALUES (
+                                '$nom',
+                                '$desc'
+                            );
+            ";
+            $resultado=$conex->query($query);
+            $conex->close();
+            return $resultado;   
+        }
+        
+        public function EliminarCategoria($id) 
+        { 
+            $conex=New Conexion();
+            $query="DELETE FROM Categoria
+                    WHERE id='$id';
+            ";
+            $resultado=$conex->query($query);
+            $conex->close();
+            return $resultado;   
+        }
     }
 ?>

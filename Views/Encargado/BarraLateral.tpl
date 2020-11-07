@@ -18,11 +18,18 @@
                             <li>
                                 <a href="?controller=Encargado&action=Vistas&vista=Movimiento">Busqueda por Movimientos</a>
                             </li>
+                            
+                            <li>
+                                <a href="?controller=Encargado&action=Vistas&vista=VerCategoria">Categoria</a>
+                            </li>
                         </ul>
                     </li>
                     <li>
                         <a href="#CrearUsuario" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Operaciones</a>
                         <ul class="collapse list-unstyled" id="CrearUsuario">
+                            <li>
+                                <a href="?controller=Encargado&action=Vistas&vista=CrearCategoria">Crear Categoria</a>
+                            </li>
                             <li>
                                 <a href="?controller=Encargado&action=Vistas&vista=CrearUsuario">Crear Usuario</a>
                             </li>
