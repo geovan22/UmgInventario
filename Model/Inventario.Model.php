@@ -66,7 +66,7 @@
                            C.Nombre as Categoria  
                 FROM Inventario I,
                      Categoria C
-                WHERE I.id = C.id
+                WHERE I.Categoria_id = C.id
                       AND I.id='$id'  
             ;";
             $resultado=$this->con->query($query);
