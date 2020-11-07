@@ -34,6 +34,7 @@
             {
                 $vista=$_GET['vista'];
                 $producto=$this->libreria->PrerarConsulta($this->inventario->BuscarProducto($_GET['id']));
+                var_dump($producto);die();
                 $this->smarty->assign('codigo',$producto[0]['Codigo']);
                 $this->smarty->assign('nombre',$producto[0]['Nombre']); 
                 $this->smarty->assign('id',$producto[0]['id']);
